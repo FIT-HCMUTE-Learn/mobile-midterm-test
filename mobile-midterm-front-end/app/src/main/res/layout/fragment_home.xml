@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="f"
+            type="nix.food.android.ui.main.home.HomeFragment"/>
+        <variable
+            name="vm"
+            type="nix.food.android.ui.main.home.HomeViewModel"/>
+        <variable
+            name="nameUser"
+            type="String" />
+        <import type="android.view.View"/>
+    </data>
+
+    <FrameLayout
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/l_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_8sdp">
+                <TextView
+                    android:id="@+id/nameUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/name_user"
+                    android:textSize="@dimen/_14ssp"
+                    android:text="@{@string/hi +  ` ` + nameUser}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eatAndOrder"
+                    android:textColor="@color/name_user"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_below="@+id/nameUser"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circularImage"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/profile"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"/>
+
+                <EditText
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_36sdp"
+                    android:drawableLeft="@drawable/search"
+                    android:hint="@string/search"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="16dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_text_box_search"
+                    android:layout_below="@+id/circularImage"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/search"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bg_banner">
+
+                    <ImageView
+                        android:id="@+id/img_banner"
+                        android:layout_width="@dimen/_121sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:src="@drawable/img_banner"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/img_banner"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_23sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_18ssp"
+                            android:text="@string/free_ship"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:text="@string/day_free_ship"
+                            android:textStyle="normal"/>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_33sdp"
+                            android:background="@drawable/bg_btn_order"
+                            android:text="order now"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:paddingHorizontal="@dimen/_12sdp"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/l_categories"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_112sdp"
+                android:layout_below="@+id/l_header"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_2sdp">
+
+                <TextView
+                    android:id="@+id/title_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/categories"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12ssp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/title_categories"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/l_categories"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_2sdp">
+
+                <TextView
+                    android:id="@+id/title_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/categories"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginVertical="@dimen/_4sdp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/title_product"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

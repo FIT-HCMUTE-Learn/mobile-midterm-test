@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Nix</string>
+    <string name="msg_loading">Please wait...</string>
+
+    <!--Network error-->
+    <string name="newtwork_error">Không thể kết nối, vui lòng kiểm tra kết nối mạng của bạn.</string>
+    <string name="newtwork_error_button_retry">Thử lại</string>
+    <string name="newtwork_error_button_exit">Thoát</string>
+    <string name="hi">Hi!</string>
+    <string name="eatAndOrder">Eat and Order</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="support">Support</string>
+    <string name="setting">Setting</string>
+    <string name="shop">Shop</string>
+    <string name="free_ship">Free Ship</string>
+    <string name="day_free_ship">14/2 - 28-2</string>
+    <string name="order_now">Order Now</string>
+    <string name="categories">Categories</string>
+</resources>
