@@ -9,6 +9,9 @@ import org.mapstruct.*;
 
 import java.util.List;
 
+/**
+ * PHAM KHANH HUY - 22110336
+ */
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE,
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         uses = {CategoryMapper.class})

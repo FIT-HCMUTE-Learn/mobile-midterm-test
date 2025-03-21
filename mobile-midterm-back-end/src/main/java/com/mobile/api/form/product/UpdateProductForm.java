@@ -7,6 +7,12 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+/**
+ * PHAM KHANH HUY - 22110336
+ */
+/**
+ * LIEN HUE TIEN - 22110433
+ */
 @Data
 @Schema(description = "Update Product Form")
 @JsonIgnoreProperties(ignoreUnknown = true)

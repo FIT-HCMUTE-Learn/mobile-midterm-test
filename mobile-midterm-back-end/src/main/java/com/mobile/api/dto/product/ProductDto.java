@@ -4,6 +4,12 @@ import com.mobile.api.dto.category.CategoryDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+/**
+ * PHAM KHANH HUY - 22110336
+ */
+/**
+ * LIEN HUE TIEN - 22110433
+ */
 @Data
 public class ProductDto {
     @Schema(description = "id")
