@@ -5,6 +5,7 @@ public class Constants {
     public static final String PREF_NAME = "mvvm.prefs";
 
     public static final String VALUE_BEARER_TOKEN_DEFAULT="NULL";
+    public static final String VALUE_USER_NAME="NULL";
 
     //Local Action manager
     public static final String ACTION_EXPIRED_TOKEN ="ACTION_EXPIRED_TOKEN";

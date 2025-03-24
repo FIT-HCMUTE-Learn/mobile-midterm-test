@@ -34,7 +34,7 @@ public class AuthInterceptor implements Interceptor {
         if (isIgnore != null && isIgnore.equals("1")) {
             Request.Builder newRequest = chain.request().newBuilder();
             newRequest.removeHeader("IgnoreAuth");
-            newRequest.addHeader("X-tenant", "quanbui");
+            newRequest.addHeader("X-tenant", "nix");
             return chain.proceed(newRequest.build());
         }
 
@@ -44,7 +44,7 @@ public class AuthInterceptor implements Interceptor {
         if (token != null && !token.equals("")) {
             newRequest.addHeader("Authorization", "Bearer " + token);
         }
-        newRequest.addHeader("X-tenant", "quanbui");
+        newRequest.addHeader("X-tenant", "nix");
 
         Response origResponse = chain.proceed(newRequest.build());
         if (origResponse.code() == 403 || origResponse.code() == 401) {

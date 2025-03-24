@@ -34,6 +34,7 @@ import nix.food.android.data.remote.AuthInterceptor;
 import nix.food.android.di.qualifier.ApiInfo;
 import nix.food.android.di.qualifier.DatabaseInfo;
 import nix.food.android.di.qualifier.PreferenceInfo;
+import nix.food.android.utils.SSLUtil;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -85,6 +86,21 @@ public class AppModule {
     }
 
     // Config OK HTTP
+//    @Provides
+//    @Singleton
+//    public OkHttpClient getClient(AuthInterceptor authInterceptor) {
+//        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+//        if (BuildConfig.DEBUG) {
+//            loggingInterceptor.level(HttpLoggingInterceptor.Level.BODY);
+//        } else {
+//            loggingInterceptor.level(HttpLoggingInterceptor.Level.NONE);
+//        }
+//        return new OkHttpClient.Builder()
+//                .addInterceptor(authInterceptor)
+//                .addInterceptor(loggingInterceptor)
+//                .build();
+
+    // Config OK HTTP
     @Provides
     @Singleton
     public OkHttpClient getClient(AuthInterceptor authInterceptor) {
@@ -94,11 +110,16 @@ public class AppModule {
         } else {
             loggingInterceptor.level(HttpLoggingInterceptor.Level.NONE);
         }
-        return new OkHttpClient.Builder()
-                .addInterceptor(authInterceptor)
-                .addInterceptor(loggingInterceptor)
+
+        OkHttpClient client = SSLUtil.getUnsafeOkHttpClient();
+
+        return client.newBuilder()
+                .addInterceptor(authInterceptor)  // Thêm AuthInterceptor
+                .addInterceptor(loggingInterceptor)  // Thêm LoggingInterceptor
                 .build();
     }
+
+
 
     // Create Retrofit
     @Provides

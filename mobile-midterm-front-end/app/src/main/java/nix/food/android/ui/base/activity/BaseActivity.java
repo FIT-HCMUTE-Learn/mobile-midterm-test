@@ -1,5 +1,6 @@
 package nix.food.android.ui.base.activity;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
@@ -10,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
@@ -100,6 +102,7 @@ public abstract class BaseActivity<B extends ViewDataBinding, V extends BaseView
                 }
             }
         };
+        setupHideKeyboardOnTouch();
     }
 
     @Override
@@ -107,6 +110,7 @@ public abstract class BaseActivity<B extends ViewDataBinding, V extends BaseView
         super.onResume();
         LocalBroadcastManager.getInstance(this).registerReceiver(globalApplicationReceiver, filterGlobalApplication);
         updateCurrentAcitivity();
+        viewModel.hideLoading();
     }
 
     @Override
@@ -121,7 +125,6 @@ public abstract class BaseActivity<B extends ViewDataBinding, V extends BaseView
 
     public void doExpireSession() {
         //implement later
-
     }
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -130,7 +133,15 @@ public abstract class BaseActivity<B extends ViewDataBinding, V extends BaseView
             requestPermissions(permissions, requestCode);
         }
     }
+    @SuppressLint("ClickableViewAccessibility")
+    private void setupHideKeyboardOnTouch() {
+        View rootView = findViewById(android.R.id.content);
 
+        rootView.setOnTouchListener((v, event) -> {
+            hideKeyboard();
+            return true;
+        });
+    }
     public void hideKeyboard() {
         View view = this.getCurrentFocus();
         if (view != null) {

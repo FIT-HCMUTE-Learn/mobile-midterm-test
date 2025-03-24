@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--TRANG KIM LOI - 22110371 - Le Nhut Anh - 22110279 -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -37,12 +38,12 @@
                 app:fabCradleRoundedCornerRadius="50dp"
                 app:fabCradleVerticalOffset="6dp">
                 <LinearLayout
+                    android:id="@+id/home"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/homeBtn"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.2"
@@ -64,6 +65,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/profile"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.2"
@@ -104,6 +106,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/support"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.2"
@@ -125,6 +128,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/setting"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.2"
@@ -151,9 +155,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
-                android:src="@drawable/btn_shop"
+                android:src="@drawable/shopping_cart"
                 app:layout_anchor="@id/app_bar"
-                app:maxImageSize="40dp"/>
+                app:maxImageSize="@dimen/_25sdp"
+                android:background="@android:color/transparent"/>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </RelativeLayout>

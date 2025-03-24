@@ -1,10 +1,13 @@
 package nix.food.android.ui.base.activity;
 
+import static android.provider.Settings.System.getString;
+
 import androidx.databinding.ObservableBoolean;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import nix.food.android.MVVMApplication;
+import nix.food.android.R;
 import nix.food.android.data.Repository;
 import nix.food.android.data.model.other.ToastMessage;
 
@@ -13,6 +16,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class BaseViewModel extends ViewModel {
+
     protected CompositeDisposable compositeDisposable;
     protected final ObservableBoolean mIsLoading = new ObservableBoolean();
     protected final MutableLiveData<String> progressBarMsg = new MutableLiveData<>();
@@ -23,7 +27,7 @@ public class BaseViewModel extends ViewModel {
 
     @Setter
     protected String deviceId;
-
+    @Getter
     protected final Repository repository;
     @Getter
     protected final MVVMApplication application;
@@ -66,5 +70,8 @@ public class BaseViewModel extends ViewModel {
 
     public void changeProgressBarMsg(String message){
         progressBarMsg.setValue(message);
+    }
+    public void showDevelopmentMessage() {
+        showNormalMessage("Tính năng đang được phát triển");
     }
 }

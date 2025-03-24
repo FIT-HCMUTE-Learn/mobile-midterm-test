@@ -1,10 +1,12 @@
 package nix.food.android.ui.base.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -62,6 +64,7 @@ public abstract class BaseFragment <B extends ViewDataBinding,V extends BaseFrag
                 }
             }
         });
+        setupHideKeyboardOnTouch(binding.getRoot());
         return binding.getRoot();
     }
 
@@ -70,7 +73,23 @@ public abstract class BaseFragment <B extends ViewDataBinding,V extends BaseFrag
         super.onCreate(savedInstanceState);
 
     }
+    public void hideKeyboard() {
+        View view = getActivity().getCurrentFocus(); // Lấy focus hiện tại từ Activity
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getContext().INPUT_METHOD_SERVICE);
+            if (imm != null) {
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+        }
+    }
 
+    @SuppressLint("ClickableViewAccessibility")
+    private void setupHideKeyboardOnTouch(View rootView) {
+        rootView.setOnTouchListener((v, event) -> {
+            hideKeyboard();
+            return false;
+        });
+    }
     public abstract int getBindingVariable();
 
     protected abstract int getLayoutId();

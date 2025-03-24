@@ -69,17 +69,15 @@ public class CustomRegisteredClientRepository implements RegisteredClientReposit
     }
 
     @Transactional
-    public boolean updateClientId(String id, String newClientId) {
+    public void updateClientId(String id, String newClientId) {
         String sql = "UPDATE oauth2_registered_client SET client_id = ? WHERE id = ?";
         int updatedRows = jdbcTemplate.update(sql, newClientId, id);
-        return updatedRows > 0;
     }
 
     @Transactional
-    public boolean updateClientSecret(String id, String newClientSecret) {
+    public void updateClientSecret(String id, String newClientSecret) {
         String hashedSecret = passwordEncoder.encode(newClientSecret);
         String sql = "UPDATE oauth2_registered_client SET client_secret = ? WHERE id = ?";
         int updatedRows = jdbcTemplate.update(sql, hashedSecret, id);
-        return updatedRows > 0;
     }
 }

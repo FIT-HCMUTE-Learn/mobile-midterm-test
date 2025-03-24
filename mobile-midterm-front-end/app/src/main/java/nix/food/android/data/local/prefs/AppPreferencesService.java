@@ -31,6 +31,15 @@ public class AppPreferencesService implements PreferencesService {
     public void setToken(String token) {
         mPrefs.edit().putString(KEY_BEARER_TOKEN, token).apply();
     }
+    @Override
+    public String getUserName() {
+        return mPrefs.getString(KEY_USERNAME, Constants.VALUE_USER_NAME);
+    }
+
+    @Override
+    public void setUserName(String userName) {
+        mPrefs.edit().putString(KEY_USERNAME, userName).apply();
+    }
 
     @Override
     public void removeKey(String key) {

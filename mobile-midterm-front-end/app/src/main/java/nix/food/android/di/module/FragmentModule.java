@@ -16,6 +16,7 @@ import javax.inject.Named;
 import dagger.Module;
 import dagger.Provides;
 import nix.food.android.ui.main.home.HomeViewModel;
+import nix.food.android.ui.main.profile.ProfileViewModel;
 
 @Module
 public class FragmentModule {
@@ -39,5 +40,13 @@ public class FragmentModule {
         Supplier<HomeViewModel> supplier = () -> new HomeViewModel(repository, (MVVMApplication)application);
         ViewModelProviderFactory<HomeViewModel> factory = new ViewModelProviderFactory<>(HomeViewModel.class, supplier);
         return new ViewModelProvider(fragment, factory).get(HomeViewModel.class);
+    }
+
+    @Provides
+    @FragmentScope
+    ProfileViewModel provideProfileViewModel(Repository repository, Context application) {
+        Supplier<ProfileViewModel> supplier = () -> new ProfileViewModel(repository, (MVVMApplication)application);
+        ViewModelProviderFactory<ProfileViewModel> factory = new ViewModelProviderFactory<>(ProfileViewModel.class, supplier);
+        return new ViewModelProvider(fragment, factory).get(ProfileViewModel.class);
     }
 }

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Le Nhut Anh - 22110279-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
@@ -154,7 +155,8 @@
             android:text="Verify"
             android:background="#ff3c05"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF"
+            android:onClick="@{v -> a.onVerifyClick()}"/>
 
         <LinearLayout
             android:layout_gravity="center"

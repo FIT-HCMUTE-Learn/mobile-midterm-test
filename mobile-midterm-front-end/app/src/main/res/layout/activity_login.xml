@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!--Nguen Thi Hong Nhung - 22110391-->
 <layout  xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
@@ -13,143 +13,134 @@
     </data>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="timatch_parent"
+        android:layout_height="match_parent"
         android:background="#F8EEEC">
 
-        <RelativeLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/imgTop"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_300sdp"
-                android:src="@drawable/top_background_login"/>
+                android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imgTop"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Welcome"
-                    android:textColor="#E9662A"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Back"
-                    android:textColor="#E9662A"
-                    android:textSize="28sp" />
-
-                <RelativeLayout
+                <ImageView
+                    android:id="@+id/imgTop"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_email"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:padding="10dp"/>
-
-                    <EditText
-                        android:id="@+id/userName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_medium"
-                        android:hint="User Name"
-                        android:inputType="textEmailAddress"
-                        android:paddingStart="48dp"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_password"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:padding="10dp"/>
-
-                    <EditText
-                        android:id="@+id/password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_medium"
-                        android:hint="Password"
-                        android:inputType="textEmailAddress"
-                        android:paddingStart="48dp"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"/>
-                </RelativeLayout>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/login"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/btn_login"
-                    android:layout_gravity="end"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_height="@dimen/_300sdp"
+                    android:src="@drawable/top_background_login"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="2"
-                    android:layout_marginBottom="8dp">
+                    android:layout_below="@+id/imgTop"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome"
+                        android:textColor="#E9662A"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Back"
+                        android:textColor="#E9662A"
+                        android:textSize="28sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <EditText
+                            android:id="@+id/userName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:drawableLeft="@drawable/ic_user"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:singleLine="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <EditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:singleLine="true"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:drawableLeft="@drawable/ic_password"/>
+                    </RelativeLayout>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="0dp"
+                        android:id="@+id/login"
+                        android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:layout_weight="1"
-                        android:text="Facebook"
-                        android:textColor="#426590"
+                        android:background="@drawable/btn_login"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="8dp"
+                        android:onClick="@{() -> a.onLoginClick()}" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_marginBottom="8dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:text="Facebook"
+                            android:textColor="#426590"
+                            android:textSize="16sp"
+                            android:background="@drawable/background_transparent_border_426590_radius_8"
+                            android:drawableEnd="@drawable/ic_facebook"
+                            android:paddingEnd="10dp"/>
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:text="Google"
+                            android:textColor="#426590"
+                            android:textSize="16sp"
+                            android:background="@drawable/background_transparent_border_426590_radius_8"
+                            android:layout_marginStart="16dp"
+                            android:drawableEnd="@drawable/ic_google"
+                            android:paddingEnd="10dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/signUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Are you new user? Register"
                         android:textSize="16sp"
-                        android:background="@drawable/background_transparent_border_426590_radius_8"
-                        android:drawableEnd="@drawable/ic_facebook"
-                        android:paddingEnd="10dp"/>
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="0dp"
-                        android:layout_height="45dp"
-                        android:layout_weight="1"
-                        android:text="Google"
                         android:textColor="#426590"
-                        android:textSize="16sp"
-                        android:background="@drawable/background_transparent_border_426590_radius_8"
-                        android:layout_marginStart="16dp"
-                        android:drawableEnd="@drawable/ic_google"
-                        android:paddingEnd="10dp"/>
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:onClick="@{v -> a.onSignUpClick()}"/>
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/signUp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Are you new user? Register"
-                    android:textSize="16sp"
-                    android:textColor="#426590"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-        </RelativeLayout>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
 
     </RelativeLayout>
 </layout>

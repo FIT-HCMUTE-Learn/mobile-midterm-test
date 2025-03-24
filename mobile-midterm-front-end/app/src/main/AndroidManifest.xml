@@ -48,7 +48,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAbgWMc4w9mE1C5nEVpLaM6ZUgV7qyvV0s" />
-        <activity android:name="nix.food.android.ui.main.MainActivity"
+        <activity android:name="nix.food.android.ui.main.login.IntroActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustNothing">
             <intent-filter>
@@ -58,9 +58,12 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.login.LoginActivity"/>
-        <activity android:name=".ui.main.login.SignUpActivity"/>
-        <activity android:name=".ui.main.login.IntroActivity"/>
+        <activity android:name=".ui.main.MainActivity"/>
+        <activity android:name=".ui.main.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ui.main.login.SignUpActivity"
+            android:windowSoftInputMode="adjustResize"/>
+
         <activity android:name=".ui.main.login.VerifyOtpActivity"/>
 
         <provider

@@ -14,7 +14,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "BASE_URL", "\"http://localhost:8080/\""
+        buildConfigField "String", "BASE_URL", "\"https://196.169.7.212:8443/\""
         buildConfigField "String", "UPDATE_URL", "\"https://update.digibes.de/qrlive/qrcode_random.txt\""
         javaCompileOptions {
             annotationProcessorOptions {
@@ -48,6 +48,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
+//        sourceCompatibility JavaVersion.VERSION_17
+//        targetCompatibility JavaVersion.VERSION_17
     }
 
 
